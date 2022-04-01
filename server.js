@@ -1,4 +1,4 @@
-/*
+
 //ASI ESTABA ORIGINALMENTE
 
 const path = require('path');
@@ -14,9 +14,9 @@ app.get('/*', function(req, res) {
 });
 
 // default Heroku port
-app.listen(process.env.PORT || 5000);*/
+app.listen(process.env.PORT || 5000);
 
-function requireHTTPS(req, res, next) {
+/*function requireHTTPS(req, res, next) {
   // The 'x-forwarded-proto' check is for Heroku
   if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
     return res.redirect('https://' + req.get('host') + req.url);
@@ -34,4 +34,4 @@ app.get('/*', (req, res) =>
   res.sendFile('index.html', {root: 'dist/proyecto-tomas-ruiz-diaz-argentino/'}),
 );
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080);*/
