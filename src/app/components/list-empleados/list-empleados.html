@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card  mb-3" >      
+
+        <div class="card-body">
+            <div class="row">
+               <div class="col">
+                  <span>Listado de Empleados</span>
+               </div>  
+               <div class="col"  style="display: flex;justify-content: right; align-items: center;">
+                  <button class="btn btn-primary btn-lg" routerLink="/create-empleado">Agregar</button>
+               </div>  
+            </div>
+            <span class="badge bg-danger" style="width: 100%;" *ngIf="empleados.length===0">NO HAY ELEMENTOS QUE MOSTRAR</span> 
+
+            <table *ngIf="empleados.length>0" class="table table-hover" style="background-color: grey;"  >
+                <thead >
+                  <tr >
+                    <th >Nombre</th>
+                    <th >Apellido</th>
+                    <th >Documento</th>
+                    <th >Salario</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of empleados">
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.apellido}}</td>
+                    <td>{{item.documento}}</td>
+                    <td>{{item.salario | currency}}</td>
+                    <td>
+                        <i  [routerLink]="['/actualizar-empleado',item.id]"  class="fas fa-edit fa-lg text-info"  style="margin-right: 10px;"></i>
+                        <i  (click)="eliminarEmpleados(item.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                    </td>
+                   </tr>      
+                </tbody>
+              </table>
+
+        </div>
+    </div>
+    <div style="color:yellow">PROYECTO ANGULAR - CRUD (agregar, actualizar, eliminar) CON ACCESO A BASE DE DATOS FIREBASE</div>
+
+</div>
